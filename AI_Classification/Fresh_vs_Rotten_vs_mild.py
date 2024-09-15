@@ -6,6 +6,7 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 import torch.nn.functional as F
+from sklearn.metrics import classification_report, f1_score
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(device)
@@ -91,7 +92,6 @@ from torch.optim.lr_scheduler import ReduceLROnPlateau
 EPOCHS = 150
 patience = 10 # Early stopping patience
 
-
 # Initialize optimizer and learning rate scheduler
 optimizer = optim.Adam(net.parameters(), lr=0.001)
 cross_el = nn.CrossEntropyLoss()
@@ -141,10 +141,16 @@ for epoch in range(EPOCHS):
     if no_improvement_epochs >= patience:
         print("Early stopping triggered")
         break
+
 k = 0
 j = 0
 correct = 0
 total = 0
+
+net.eval()
+y_true = []
+y_pred = []
+
 with torch.no_grad():
     for data in data_loader['test']:
         k += 1
@@ -157,7 +163,17 @@ with torch.no_grad():
             if torch.argmax(i) == y[idx]:
                 correct += 1
             total += 1
+        _, preds = torch.max(output, 1)
+
+        y_true.extend(y.cpu().numpy())
+        y_pred.extend(preds.cpu().numpy())
 
 print(f'Accuracy: {round(correct/total, 3)}')
+# Classification report and F1 score
+report = classification_report(y_true, y_pred, target_names=class_names)
+print(report)
+
+f1 = f1_score(y_true, y_pred, average='weighted')
+print(f"Weighted F1 Score: {f1}")
 
 torch.save(net.state_dict(), model_path)
