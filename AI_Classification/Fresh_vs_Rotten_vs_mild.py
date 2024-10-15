@@ -6,17 +6,19 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 import torch.nn.functional as F
-from sklearn.metrics import classification_report, f1_score, roc_auc_score, roc_curve, auc
+from sklearn.metrics import roc_auc_score, roc_curve, auc, f1_score, accuracy_score
 from sklearn.preprocessing import label_binarize
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(device)
 
-fruit_train = 'C:/Users/User/Desktop/Code/AI_Project_Fruit_Classification_Jupyter/FruQ-multi/train'
-fruit_test = 'C:/Users/User/Desktop/Code/AI_Project_Fruit_Classification_Jupyter/FruQ-multi/test'
-data_dir = 'C:/Users/User/Desktop/Code/AI_Project_Fruit_Classification_Jupyter/FruQ-multi'
+# Paths for datasets
+fruit_train = '/content/drive/My Drive/notebook_data_output/dataset3/train'
+fruit_test = '/content/drive/My Drive/notebook_data_output/dataset3/test'
+data_dir = '/content/drive/My Drive/notebook_data_output/dataset3'
 print(torch.cuda.device_count())
 
+# Data transforms
 data_transform = {
     'train': transforms.Compose([
         transforms.Resize((224, 224)),
@@ -33,9 +35,9 @@ data_transform = {
 
 # Load datasets
 image_datasets = {x: datasets.ImageFolder(os.path.join(data_dir, x), data_transform[x]) for x in ['train', 'test']}
-
 class_names = image_datasets['train'].classes
 
+# Data loaders
 data_loader = {x: torch.utils.data.DataLoader(image_datasets[x], shuffle=True, batch_size=32, num_workers=0) for x in ['train', 'test']}
 
 def imshow(inp, title=None):
@@ -53,6 +55,7 @@ inputs, classes = next(iter(data_loader['train']))
 out = utils.make_grid(inputs)
 imshow(out, title=[class_names[x] for x in classes])
 
+# Model definition
 class Net(nn.Module):
     def __init__(self):
         super().__init__()
@@ -79,31 +82,37 @@ class Net(nn.Module):
         x = self.fc2(x)
         return x
 
-net = Net().to(device)  # Move the model to GPU
+net = Net().to(device)
 
-model_path = 'C:/Users/User/Desktop/Code/AI_Project_Fruit_Classification_Jupyter/Mobile apps/fruit_classifier.pth'
+# Load model if available
+model_path = '/content/drive/My Drive/AshtonClolab/mobile/fruit_classifier.pth'
 if os.path.exists(model_path):
     net.load_state_dict(torch.load(model_path))
     print("Loaded saved model.")
 
-# Define the number of EPOCHS
-EPOCHS = 1
-patience = 10  # Early stopping patience
+# Paths to save metrics
+roc_auc_file_path = '/content/drive/My Drive/AshtonClolab/Metrics/ROC-AUC.txt'
+f1_score_file_path = '/content/drive/My Drive/AshtonClolab/Metrics/F1_Score.txt'
+accuracy_file_path = '/content/drive/My Drive/AshtonClolab/Metrics/Accuracy.txt'
+loss_file_path = '/content/drive/My Drive/AshtonClolab/Metrics/Loss.txt'
+os.makedirs(os.path.dirname(roc_auc_file_path), exist_ok=True)
 
-# Initialize optimizer and learning rate scheduler
+# Training parameters
+EPOCHS = 10
+patience = 10
 optimizer = optim.Adam(net.parameters(), lr=0.001)
 cross_el = nn.CrossEntropyLoss()
 scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', patience=2, factor=0.1)
-
 best_loss = float('inf')
 no_improvement_epochs = 0
 
 # Training loop
 for epoch in range(EPOCHS):
     print(f"Epoch: {epoch + 1}")
-    net.train()  # Set the model to training mode
-    running_loss = 0.0  # Initialize running loss for the epoch
+    net.train()
+    running_loss = 0.0
 
+    # Training phase
     for batch_idx, data in enumerate(data_loader['train']):
         x, y = data[0].to(device), data[1].to(device)  # Move data to GPU
         optimizer.zero_grad()  # Clear gradients from the previous step
@@ -119,67 +128,65 @@ for epoch in range(EPOCHS):
     average_loss = running_loss / len(data_loader['train'])
     print(f"Average Loss for Epoch {epoch + 1}: {average_loss}")
 
-    # Check for early stopping
+    # Save loss
+    with open(loss_file_path, 'a') as loss_file:
+        loss_file.write(f"Epoch {epoch + 1}: Loss = {average_loss}\n")
+
+    # Evaluation phase
+    net.eval()
+    y_true = []
+    y_pred = []
+    y_prob = []
+
+    with torch.no_grad():
+        for data in data_loader['test']:
+            x, y = data[0].to(device), data[1].to(device)
+            output = net(x)
+            probs = F.softmax(output, dim=1)
+            _, preds = torch.max(output, 1)
+            y_true.extend(y.cpu().numpy())
+            y_pred.extend(preds.cpu().numpy())
+            y_prob.extend(probs.cpu().numpy())
+
+    # Compute accuracy
+    acc = accuracy_score(y_true, y_pred)
+    print(f"Accuracy for Epoch {epoch + 1}: {acc}")
+    with open(accuracy_file_path, 'a') as accuracy_file:
+        accuracy_file.write(f"Epoch {epoch + 1}: Accuracy = {acc}\n")
+
+    # Compute F1 Score (macro-average)
+    f1 = f1_score(y_true, y_pred, average='macro')
+    print(f"F1 Score for Epoch {epoch + 1}: {f1}")
+    with open(f1_score_file_path, 'a') as f1_file:
+        f1_file.write(f"Epoch {epoch + 1}: F1 Score = {f1}\n")
+
+    # Binarize the labels for multi-class ROC calculation
+    y_true_bin = label_binarize(y_true, classes=range(len(class_names)))
+
+    # Compute ROC curve, TPR, FPR for all classes combined (one-vs-rest approach)
+    fpr, tpr, _ = roc_curve(y_true_bin.ravel(), np.array(y_prob).ravel())
+    roc_auc = auc(fpr, tpr)
+
+    # Save overall TPR, FPR, and AUC
+    with open(roc_auc_file_path, 'a') as roc_auc_file:
+        roc_auc_file.write(f"Epoch {epoch + 1}:\n")
+        roc_auc_file.write(f"TPR: {tpr}, FPR: {fpr}, AUC: {roc_auc:.2f}\n\n")
+
+    # Early stopping and learning rate adjustment
     if average_loss < best_loss:
         best_loss = average_loss
         no_improvement_epochs = 0
-        # Save the best model
         torch.save(net.state_dict(), model_path)
         print(f"Best model saved after epoch {epoch + 1}")
     else:
         no_improvement_epochs += 1
         print(f"No improvement for {no_improvement_epochs} epochs")
 
-    # Adjust learning rate based on validation loss
     scheduler.step(average_loss)
 
     if no_improvement_epochs >= patience:
         print("Early stopping triggered")
         break
 
-# ROC-AUC Calculation (no plotting)
-net.eval()
-y_true = []
-y_pred = []
-y_prob = []  # To store predicted probabilities
-
-with torch.no_grad():
-    for data in data_loader['test']:
-        x, y = data[0].to(device), data[1].to(device)  # Move data to GPU
-        output = net(x)
-        probs = F.softmax(output, dim=1)  # Apply softmax to get probabilities
-        _, preds = torch.max(output, 1)
-
-        y_true.extend(y.cpu().numpy())
-        y_pred.extend(preds.cpu().numpy())
-        y_prob.extend(probs.cpu().numpy())  # Collect probabilities
-
-# Binarize the labels for multi-class ROC calculation
-y_true_bin = label_binarize(y_true, classes=range(len(class_names)))
-
-# Compute ROC curve and ROC-AUC for each class
-fpr = dict()
-tpr = dict()
-roc_auc = dict()
-
-for i in range(len(class_names)):
-    fpr[i], tpr[i], _ = roc_curve(y_true_bin[:, i], np.array(y_prob)[:, i])
-    roc_auc[i] = auc(fpr[i], tpr[i])
-    print(f'Class {class_names[i]} AUC: {roc_auc[i]:.2f}')
-
-# Calculate the overall AUC score (one-vs-rest)
-macro_roc_auc_ovr = roc_auc_score(y_true_bin, y_prob, multi_class="ovr", average="macro")
-print(f'Macro-Averaged ROC AUC (One-vs-Rest): {macro_roc_auc_ovr:.2f}')
-
-# Accuracy and classification report
-correct = sum([1 for i in range(len(y_true)) if y_true[i] == y_pred[i]])
-total = len(y_true)
-print(f'Accuracy: {round(correct/total, 3)}')
-
-# Classification report and F1 score
-print(classification_report(y_true, y_pred, zero_division=0))
-f1 = f1_score(y_true, y_pred, average='weighted', zero_division=0)
-print(f"Weighted F1 Score: {f1}")
-
-# Save the final model
+# Save final model
 torch.save(net.state_dict(), model_path)
