@@ -1,0 +1,38 @@
+\documentclass[a4paper,oneside,11pt]{book}
+\usepackage{NWUStyle}
+\usepackage{titlesec} % For redefining chapter title format
+\usepackage{hyperref} % For hyperlinks
+\usepackage{xcolor}   % For color definitions
+\usepackage{listings} % For code highlighting
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% Redefine chapter and section spacing
+\titlespacing{\chapter}{0pt}{-50pt}{5pt}
+\titlespacing{\section}{0pt}{10pt}{5pt}
+
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{}{0pt}{\Huge}
+
+\begin{document}
+\Title{User Manual for Setup of a Raspberry Pi Cluster}
+\Initials{A.}
+\FirstName{Ashton}
+\Surname{du Plessis}
+\StudentNumber{34202676}
+\Supervisor{Mr. Heystek Grobler}
+\MakeTitle 
+\pagenumbering{roman} 
+\tableofcontents
+\cleardoublepage
+\setcounter{page}{2}
+\listoffigures
+\cleardoublepage 
+\pagenumbering{arabic} 
+
+\chapter[Introduction]{Introduction}
+\section{The first section}
+
+% \bibliography{MyBib}
+
+\end{document}
