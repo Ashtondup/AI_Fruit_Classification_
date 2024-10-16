@@ -1,0 +1,10 @@
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Architecture of Model}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Input Layer}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Convolution Layer}{3}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Batch Normalisation Layer}{3}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Activation Function (Nonlinearity Layer)}{4}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Pooling Layer}{4}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Dropout Layer}{4}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Fully Connected Layer}{4}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Output Layer}{4}{section.2.8}%

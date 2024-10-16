@@ -1,0 +1,95 @@
+\documentclass[a4paper,oneside,11pt]{book}
+\usepackage{NWUStyle}
+\usepackage{titlesec} % For redefining chapter title format
+\usepackage{hyperref} % For hyperlinks
+\usepackage{xcolor}   % For color definitions
+\usepackage{listings} % For code highlighting
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% Redefine chapter and section spacing
+\titlespacing{\chapter}{0pt}{-50pt}{5pt}
+\titlespacing{\section}{0pt}{10pt}{5pt}
+
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{}{0pt}{\Huge}
+
+\begin{document}
+\Title{ITRI 626 Mini-Project Submission}
+\Initials{A.}
+\FirstName{Ashton}
+\Surname{du Plessis}
+\StudentNumber{34202676}
+\Supervisor{Prof. Abasalom E. Ezuguw}
+\MakeTitle 
+\pagenumbering{roman} 
+\tableofcontents
+\cleardoublepage
+\setcounter{page}{2}
+\listoffigures
+\cleardoublepage 
+\pagenumbering{arabic} 
+
+\pagestyle{plain}
+\chapter[Introduction]{Introduction}
+
+
+
+\chapter[Architecture of Model]{Architecture of Model}
+
+The model that was developed is a convolutional neural network (CNN). CNNs are based on neurons that are organised in layers, this enables CNNs to hierarchical representations \citep{kattenborn2021review}. The architecture of any CNN, this includes the model that was developed to write up this report, consists out of the following layers as stated by \cite{bhatt2021cnn}: 
+\begin{itemize}
+    \item Input layer
+    \item Convolution layer
+    \item Batch normalisation layer
+    \item Activation function (Nonlinearity layer)
+    \item Pooling layer
+    \item Dropout layer
+    \item Fully connected layer
+    \item Output layer
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=0.7\textwidth, height=0.7\textheight, keepaspectratio]{img/Neural_Network_Architecture.png}}
+    \caption{Neural Network Architecture}
+\end{figure}
+
+\newpage
+\section{Input Layer}
+
+The images of the fruits that the model is trained gets inputed into the model in barches of 32. The images are than resized to 224x224 pixels with the 3 colour channels, RGB (Red Green Blue). Each of the colour channels are normalised by using a mean of [0.485, 0.456, 0.406] and a standard deviation of [0.229, 0.224, 0.225]. 
+
+\begin{figure}[h]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=0.7\textwidth, height=0.7\textheight, keepaspectratio]{img/Input_Batch.png}}
+    \caption{Representation of Input Batch}
+\end{figure}
+
+\section{Convolution Layer}
+
+This model consists out of 4 convolutional layers. Each of the convolutional layers are followed by batch normalisation, activation, pooling, and dropout.
+
+The parameters for each convolutional layer is strucherd as follows. The input colour channels, the colour channels as the images are enterd into the model. The output channels, the new colour channels after the images passes throw a convolutional layer this becomes for the following convolutional layer. The kernel size, the kenel size refers to the dimensions of the sliding window that moves across the input image, the kernel performs element-wise multiplication with the input data it covers, followed by a summation to produce a single output value, this helps in feature extraction, such as detecting edges, textures, or more complex patterns in deeper layers \citep{ding2022scaling}. The padding, the adding of extra pixels around the border of an image after is has passed throw the convolutional layer.
+
+\section{Batch Normalisation Layer}
+
+The batch normalisation helps to standardise and acceletate the training of the model, by normalising the inputs of each of the batches, the batch normalisation is located before the activation function \citep{kumar2021convolutional}.
+
+\section{Activation Function (Nonlinearity Layer)}
+
+The activation function that was used in this model is the ReLU activation function. This activation function introduces non-linearity into the model, by enabling the model to learn complex patterns. ReLU demonstrated that a activation function in the hidden layers can improve the training speed of the model \citep{ide2017improvement}.
+
+\section{Pooling Layer}
+
+\section{Dropout Layer}
+
+The dropout layer is a Regularisation technique that helps to prevent overfitting by randomly setting a fraction of input units to zero during training \citep{khan2019regularization}. As stated by \cite{khan2019regularization} a dropout rate of 0.5 is a standerd dropout rate.
+
+\section{Fully Connected Layer}
+
+\section{Output Layer}
+
+\bibliography{MyBib}
+
+\end{document}
