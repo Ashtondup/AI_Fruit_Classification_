@@ -1,0 +1,41 @@
+\begin{thebibliography}{}
+
+\bibitem[Bhatt et~al., 2021]{bhatt2021cnn}
+Bhatt, D., Patel, C., Talsania, H., Patel, J., Vaghela, R., Pandya, S., Modi,
+  K., and Ghayvat, H. (2021).
+\newblock Cnn variants for computer vision: History, architecture, application,
+  challenges and future scope.
+\newblock {\em Electronics}, 10(20):2470.
+
+\bibitem[Ding et~al., 2022]{ding2022scaling}
+Ding, X., Zhang, X., Han, J., and Ding, G. (2022).
+\newblock Scaling up your kernels to 31x31: Revisiting large kernel design in
+  cnns.
+\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and
+  pattern recognition}, pages 11963--11975.
+
+\bibitem[Ide and Kurita, 2017]{ide2017improvement}
+Ide, H. and Kurita, T. (2017).
+\newblock Improvement of learning for cnn with relu activation by sparse
+  regularization.
+\newblock In {\em 2017 international joint conference on neural networks
+  (IJCNN)}, pages 2684--2691. IEEE.
+
+\bibitem[Kattenborn et~al., 2021]{kattenborn2021review}
+Kattenborn, T., Leitloff, J., Schiefer, F., and Hinz, S. (2021).
+\newblock Review on convolutional neural networks (cnn) in vegetation remote
+  sensing.
+\newblock {\em ISPRS journal of photogrammetry and remote sensing}, 173:24--49.
+
+\bibitem[Khan et~al., 2019]{khan2019regularization}
+Khan, S.~H., Hayat, M., and Porikli, F. (2019).
+\newblock Regularization of deep neural networks with spectral dropout.
+\newblock {\em Neural Networks}, 110:82--90.
+
+\bibitem[Kumar and Shankar~Hati, 2021]{kumar2021convolutional}
+Kumar, P. and Shankar~Hati, A. (2021).
+\newblock Convolutional neural network with batch normalisation for fault
+  detection in squirrel cage induction motor.
+\newblock {\em IET electric power applications}, 15(1):39--50.
+
+\end{thebibliography}
