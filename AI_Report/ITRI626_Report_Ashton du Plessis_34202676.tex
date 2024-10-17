@@ -33,8 +33,6 @@
 \pagestyle{plain}
 \chapter[Introduction]{Introduction}
 
-
-
 \chapter[Architecture of Model]{Architecture of Model}
 
 The model that was developed is a convolutional neural network (CNN). CNNs are based on neurons that are organised in layers, this enables CNNs to hierarchical representations \citep{kattenborn2021review}. The architecture of any CNN, this includes the model that was developed to write up this report, consists out of the following layers as stated by \cite{bhatt2021cnn}: 
@@ -82,13 +80,40 @@ The activation function that was used in this model is the ReLU activation funct
 
 \section{Pooling Layer}
 
+The purpose of this layer is to down size the convolved feature's spatial size, this helps to reduce the computing power that is needed to process the data \citep{bhatt2021cnn}. For this model maximum pooling was used in the pooling layer. The input tensor is processed by the pooling layer, where a 2x2 kernel moves across the matrix, selecting the maximum value at each position to populate the output matrix \citep{bhatt2021cnn}.
+
 \section{Dropout Layer}
 
-The dropout layer is a Regularisation technique that helps to prevent overfitting by randomly setting a fraction of input units to zero during training \citep{khan2019regularization}. As stated by \cite{khan2019regularization} a dropout rate of 0.5 is a standerd dropout rate.
+The dropout layer is a regularisation technique that helps to prevent overfitting by randomly setting a fraction of input units to zero during training \citep{khan2019regularization}. As stated by \cite{khan2019regularization} a dropout rate of 0.5 is a standerd dropout rate.
 
 \section{Fully Connected Layer}
 
+The fully connected layer, also known as the densse layer, is located at the end of all the hidden layer, and allowse the model to preform classification. The fully connected layer takes input from the final pooling layer, which is flattened before being passed to it \citep{bhatt2021cnn}. Flattening transforms the 3D output from the previous layer into a single vector \citep{bhatt2021cnn}. The FC layer then learns nonlinear combinations of high-level features from the convolutional layer, allowing it to model complex functions in that space \citep{bhatt2021cnn}.
+
+\newpage
 \section{Output Layer}
+
+The output layer is the last layer for a CNN model. The output that the model profides can be between any of the 32 defferent classes that the dataset exist out of. The activation function is also applayed her to determine the probability of the model acuratly predicting the output. Based on this predicting the model does backpropogation and change values to help improve the training process. Since the model is being saved, this make it possible applay transfer learning, by using the saved model to train on a new dataset.
+
+\begin{figure}[h]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=0.7\textwidth, height=0.7\textheight, keepaspectratio]{img/Ai_Prent.drawio_1_1.png}}
+    \caption{Representation of the Layers}
+\end{figure}
+
+\chapter[Performance Evaluation]{Performance Evaluation}
+
+The model that was developed could train for a maximum epoch of 150. A pations of 10 epochs was added to prevent overfitting the model, by stopping if no improvements to the model hes been made after 10 epochs. During the training process of the model metrices such as loss per epoch, accuracy per epoch, F1-score per epoch, and the ROC and AUC where collected and saved in their own respective text files. This section will descuse each of these metrices of the model.
+
+\section{Loss}
+
+\section{Accuracy}
+
+\section{F1-Score}
+
+\section{ROC AUC}
+
+\chapter[Conclusion]{Conclusion}
 
 \bibliography{MyBib}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.18)  16 OCT 2024 11:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.18)  17 OCT 2024 11:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -647,7 +647,7 @@ Overfull \hbox (35.56334pt too wide) in paragraph at lines 24--24
  [] 
  []
 
-<img/NWUBack.png, id=46, 644.4075pt x 317.185pt>
+<img/NWUBack.png, id=70, 644.4075pt x 317.185pt>
 File: img/NWUBack.png Graphic file (type png)
 <use img/NWUBack.png>
 Package pdftex.def Info: img/NWUBack.png  used on input line 24.
@@ -674,26 +674,40 @@ Chapter 1.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.38 \chapter
+l.36 \chapter
              [Architecture of Model]{Architecture of Model} [1
 
 
 ]
 Chapter 2.
-<img/Neural_Network_Architecture.png, id=88, 506.6428pt x 482.55281pt>
+<img/Neural_Network_Architecture.png, id=120, 506.6428pt x 482.55281pt>
 File: img/Neural_Network_Architecture.png Graphic file (type png)
 <use img/Neural_Network_Architecture.png>
-Package pdftex.def Info: img/Neural_Network_Architecture.png  used on input line 54.
+Package pdftex.def Info: img/Neural_Network_Architecture.png  used on input line 52.
 (pdftex.def)             Requested size: 298.76205pt x 284.55641pt.
 [2
 
  <./img/Neural_Network_Architecture.png>]
-<img/Input_Batch.png, id=99, 450.9347pt x 215.30438pt>
+<img/Input_Batch.png, id=131, 450.9347pt x 215.30438pt>
 File: img/Input_Batch.png Graphic file (type png)
 <use img/Input_Batch.png>
-Package pdftex.def Info: img/Input_Batch.png  used on input line 65.
+Package pdftex.def Info: img/Input_Batch.png  used on input line 63.
 (pdftex.def)             Requested size: 298.76689pt x 142.64996pt.
- [3 <./img/Input_Batch.png>] (ITRI626_Report_Ashton du Plessis_34202676.bbl [4]) [5
+ [3 <./img/Input_Batch.png>] [4]
+<img/Ai_Prent.drawio_1_1.png, id=167, 713.66624pt x 621.07031pt>
+File: img/Ai_Prent.drawio_1_1.png Graphic file (type png)
+<use img/Ai_Prent.drawio_1_1.png>
+Package pdftex.def Info: img/Ai_Prent.drawio_1_1.png  used on input line 100.
+(pdftex.def)             Requested size: 298.74681pt x 259.98537pt.
+ [5 <./img/Ai_Prent.drawio_1_1.png>]
+Chapter 3.
+[6
+
+]
+Chapter 4.
+(ITRI626_Report_Ashton du Plessis_34202676.bbl [7
+
+]) [8
 
 ] (ITRI626_Report_Ashton du Plessis_34202676.aux)
  ***********
@@ -701,20 +715,20 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-13>
  ***********
 Package rerunfilecheck Info: File `"ITRI626_Report_Ashton du Plessis_34202676".out' has not changed.
-(rerunfilecheck)             Checksum: A7D2CBDAB16ADADEC6BF7AFA60165142;1492.
+(rerunfilecheck)             Checksum: B7D39235FEDD2054A5AF1FD4657A0B5E;2101.
  ) 
 Here is how much of TeX's memory you used:
- 24058 strings out of 474461
- 438785 string characters out of 5743334
+ 24081 strings out of 474461
+ 439186 string characters out of 5743334
  1932998 words of memory out of 5000000
- 45927 multiletter control sequences out of 15000+600000
+ 45940 multiletter control sequences out of 15000+600000
  573228 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,12n,107p,944b,490s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on "ITRI626_Report_Ashton du Plessis_34202676.pdf" (8 pages, 351457 bytes).
+Output written on "ITRI626_Report_Ashton du Plessis_34202676.pdf" (11 pages, 478825 bytes).
 PDF statistics:
- 169 PDF objects out of 1000 (max. 8388607)
- 29 named destinations out of 1000 (max. 500000)
- 108 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 230 PDF objects out of 1000 (max. 8388607)
+ 39 named destinations out of 1000 (max. 500000)
+ 161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
