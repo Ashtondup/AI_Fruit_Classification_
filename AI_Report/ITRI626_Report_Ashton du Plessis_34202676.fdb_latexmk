@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex ITRI626_Report_Ashton du Plessis_34202676"] 1729155523.00759 "ITRI626_Report_Ashton du Plessis_34202676.aux" "ITRI626_Report_Ashton du Plessis_34202676.bbl" "ITRI626_Report_Ashton du Plessis_34202676" 1729156362.42636 0
-  "./MyBib.bib" 1729072305 2131 a28a1d9a9cf5badfdf5c0a8f9c0745df ""
+["bibtex ITRI626_Report_Ashton du Plessis_34202676"] 1729503627.44917 "ITRI626_Report_Ashton du Plessis_34202676.aux" "ITRI626_Report_Ashton du Plessis_34202676.bbl" "ITRI626_Report_Ashton du Plessis_34202676" 1729504404.04807 0
+  "./MyBib.bib" 1729503823 5884 0c76b1dadd3787efcd54d87aec9c8a15 ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/apalike.bst" 1291972791 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "ITRI626_Report_Ashton du Plessis_34202676.aux" 1729156360 3523 69bc66213f769b9ecb33c8d8ecb3e0bf "pdflatex"
+  "ITRI626_Report_Ashton du Plessis_34202676.aux" 1729504402 5257 24e0039712e4f7b4123e99bd68020804 "pdflatex"
   (generated)
   "ITRI626_Report_Ashton du Plessis_34202676.bbl"
   "ITRI626_Report_Ashton du Plessis_34202676.blg"
   (rewritten before read)
-["pdflatex"] 1729156358.43832 "c:/Users/User/Desktop/Code/AI_Fruit_Classification_/AI_Report/ITRI626_Report_Ashton du Plessis_34202676.tex" "ITRI626_Report_Ashton du Plessis_34202676.pdf" "ITRI626_Report_Ashton du Plessis_34202676" 1729156362.42758 0
+["pdflatex"] 1729504399.93767 "c:/Users/User/Desktop/Code/AI_Fruit_Classification_/AI_Report/ITRI626_Report_Ashton du Plessis_34202676.tex" "ITRI626_Report_Ashton du Plessis_34202676.pdf" "ITRI626_Report_Ashton du Plessis_34202676" 1729504404.04928 0
   "C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1728399729 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/User/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1709286608 12668 5e783263808c5f9fa3bca94d6ecf4c09 ""
   "C:/Users/User/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1708258580 24229683 0ba46cbad6bfc1ae48ca0d0b2901745b ""
@@ -183,18 +183,22 @@
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/varwidth/varwidth.sty" 1238469540 10894 d359a13923460b2a73d4312d613554c8 ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "ITRI626_Report_Ashton du Plessis_34202676.aux" 1729156360 3523 69bc66213f769b9ecb33c8d8ecb3e0bf "pdflatex"
-  "ITRI626_Report_Ashton du Plessis_34202676.bbl" 1729155523 1779 6683fef3a5ea96edb7b9114c803c89d3 "bibtex ITRI626_Report_Ashton du Plessis_34202676"
-  "ITRI626_Report_Ashton du Plessis_34202676.lof" 1729156360 386 6b3055d20602a00b45e31b674971c7e4 "pdflatex"
-  "ITRI626_Report_Ashton du Plessis_34202676.out" 1729156360 2101 b7d39235fedd2054a5af1fd4657a0b5e "pdflatex"
-  "ITRI626_Report_Ashton du Plessis_34202676.tex" 1729156357 7013 8441d65b95316066f0c51b68687c23b8 ""
-  "ITRI626_Report_Ashton du Plessis_34202676.toc" 1729156360 1188 8c99d7b889373977cfc999d3756e158a "pdflatex"
-  "NWUStyle.sty" 1717051374 4696 6fefd89afa6603c15e45e154230856e5 ""
-  "c:/Users/User/Desktop/Code/AI_Fruit_Classification_/AI_Report/ITRI626_Report_Ashton du Plessis_34202676.tex" 1729156357 7013 8441d65b95316066f0c51b68687c23b8 ""
+  "ITRI626_Report_Ashton du Plessis_34202676.aux" 1729504402 5257 24e0039712e4f7b4123e99bd68020804 "pdflatex"
+  "ITRI626_Report_Ashton du Plessis_34202676.bbl" 1729503627 4938 64502ce30099a3c96e646a1e4056144f "bibtex ITRI626_Report_Ashton du Plessis_34202676"
+  "ITRI626_Report_Ashton du Plessis_34202676.lof" 1729504402 756 ded108c86565c846cbd9599d0f629642 "pdflatex"
+  "ITRI626_Report_Ashton du Plessis_34202676.out" 1729504402 2101 b7d39235fedd2054a5af1fd4657a0b5e "pdflatex"
+  "ITRI626_Report_Ashton du Plessis_34202676.tex" 1729504399 13409 30cad0aa12ec113fcac18d3e02522222 ""
+  "ITRI626_Report_Ashton du Plessis_34202676.toc" 1729504402 1188 3ef527b302f7a3eea7a43b3a58b5e0d5 "pdflatex"
+  "NWUStyle.sty" 1729156661 4696 6fefd89afa6603c15e45e154230856e5 ""
+  "c:/Users/User/Desktop/Code/AI_Fruit_Classification_/AI_Report/ITRI626_Report_Ashton du Plessis_34202676.tex" 1729504399 13409 30cad0aa12ec113fcac18d3e02522222 ""
+  "img/Accuracy_per_epoch.png" 1729158028 28535 1800b80600b16d3b7bcf612693573b72 ""
   "img/Ai_Prent.drawio_1_1.png" 1716738403 291222 ce9c2d2225769b516353ab87d138057f ""
+  "img/F1-Score_per_epoch.png" 1729158074 30911 a6ba2b5966d0a024d730749fac5615a4 ""
   "img/Input_Batch.png" 1729069396 182649 86bae3fd12da75d21384e5eda589fc98 ""
+  "img/Loss_per_epoch.png" 1729158052 20575 396e36520a2064b998cfa303321097af ""
   "img/NWUBack.png" 1709740182 18971 2722b121b1643b4ed364baad95cde189 ""
   "img/Neural_Network_Architecture.png" 1729067392 72781 0443423bf9be9a20777d6478044d5587 ""
+  "img/ROC-AUC_Graph.png" 1729163624 43093 263717f3d29615e53457729b20f15cd1 ""
   (generated)
   "ITRI626_Report_Ashton du Plessis_34202676.aux"
   "ITRI626_Report_Ashton du Plessis_34202676.lof"

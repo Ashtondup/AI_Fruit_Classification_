@@ -33,6 +33,8 @@
 \pagestyle{plain}
 \chapter[Introduction]{Introduction}
 
+Convolutional Neural Networks (CNNs) are deep neural networks that are often used for image analysis. It can recognise images, classify them, detect objects, and identify faces. CNN comprises neurons with learnable weights and biases. Neurons may process several inputs by creating a point as a product and possibly following it with nonlinearity. The network still expresses a single scoring function, distinguishing between raw picture pixels and class scores. CNN provides computational efficiency through convolution, spatial integration, and parameter sharing. Thus, it enables CNN models to operate on any platform, even mobile devices \citep{valentino2021design}. Being utilised in clinical research for medical image analysis, with a strong emphasis on the clinical aspects of the field \citep{singha2021deep} along with face recognition, action recognition, image classification and natural language processing \citep{shamsaldin2019study}. Deep learning is a recent trend in machine learning and artificial intelligence research \citep{wang2020recent}. Many notable advancements have occurred in this sector across the world. Such studies include deep learning that can be used as an automatic system for plant counting \citep{cenggoro2018information} \citep{rahutomo2019artificial}.
+
 \chapter[Architecture of Model]{Architecture of Model}
 
 The model that was developed is a convolutional neural network (CNN). CNNs are based on neurons that are organised in layers, this enables CNNs to hierarchical representations \citep{kattenborn2021review}. The architecture of any CNN, this includes the model that was developed to write up this report, consists out of the following layers as stated by \cite{bhatt2021cnn}: 
@@ -56,7 +58,7 @@ The model that was developed is a convolutional neural network (CNN). CNNs are b
 \newpage
 \section{Input Layer}
 
-The images of the fruits that the model is trained gets inputed into the model in barches of 32. The images are than resized to 224x224 pixels with the 3 colour channels, RGB (Red Green Blue). Each of the colour channels are normalised by using a mean of [0.485, 0.456, 0.406] and a standard deviation of [0.229, 0.224, 0.225]. 
+The images of the fruits that the model is trained gets inputted into the model in branches of 32. The images are then resized to 224x224 pixels with the 3 colour channels, RGB (Red Green Blue). Each of the colour channels are normalised by using a mean of [0.485, 0.456, 0.406] and a standard deviation of [0.229, 0.224, 0.225]. 
 
 \begin{figure}[h]
     \centering
@@ -66,17 +68,17 @@ The images of the fruits that the model is trained gets inputed into the model i
 
 \section{Convolution Layer}
 
-This model consists out of 4 convolutional layers. Each of the convolutional layers are followed by batch normalisation, activation, pooling, and dropout.
+This model consists of 4 convolutional layers. Each of the convolutional layers are followed by batch normalisation, activation, pooling, and dropout.
 
-The parameters for each convolutional layer is strucherd as follows. The input colour channels, the colour channels as the images are enterd into the model. The output channels, the new colour channels after the images passes throw a convolutional layer this becomes for the following convolutional layer. The kernel size, the kenel size refers to the dimensions of the sliding window that moves across the input image, the kernel performs element-wise multiplication with the input data it covers, followed by a summation to produce a single output value, this helps in feature extraction, such as detecting edges, textures, or more complex patterns in deeper layers \citep{ding2022scaling}. The padding, the adding of extra pixels around the border of an image after is has passed throw the convolutional layer.
+The parameters for each convolutional layer are structured as follows. The input colour channels, the colour channels as the images are entered into the model. The output channels, the new colour channels after the images passes throw a convolutional layer this becomes for the following convolutional layer. The kernel size, the kenel size refers to the dimensions of the sliding window that moves across the input image, the kernel performs element-wise multiplication with the input data it covers, followed by a summation to produce a single output value, this helps in feature extraction, such as detecting edges, textures, or more complex patterns in deeper layers \citep{ding2022scaling}. The padding, the adding of extra pixels around the border of an image after is has passed throw the convolutional layer.
 
 \section{Batch Normalisation Layer}
 
-The batch normalisation helps to standardise and acceletate the training of the model, by normalising the inputs of each of the batches, the batch normalisation is located before the activation function \citep{kumar2021convolutional}.
+The batch normalisation helps to standardise and accelerate the training of the model, by normalising the inputs of each of the batches, the batch normalisation is located before the activation function \citep{kumar2021convolutional}.
 
 \section{Activation Function (Nonlinearity Layer)}
 
-The activation function that was used in this model is the ReLU activation function. This activation function introduces non-linearity into the model, by enabling the model to learn complex patterns. ReLU demonstrated that a activation function in the hidden layers can improve the training speed of the model \citep{ide2017improvement}.
+The activation function that was used in this model is the ReLU activation function. This activation function introduces non-linearity into the model, by enabling the model to learn complex patterns. ReLU demonstrated that an activation function in the hidden layers can improve the training speed of the model \citep{ide2017improvement}.
 
 \section{Pooling Layer}
 
@@ -84,16 +86,16 @@ The purpose of this layer is to down size the convolved feature's spatial size, 
 
 \section{Dropout Layer}
 
-The dropout layer is a regularisation technique that helps to prevent overfitting by randomly setting a fraction of input units to zero during training \citep{khan2019regularization}. As stated by \cite{khan2019regularization} a dropout rate of 0.5 is a standerd dropout rate.
+The dropout layer is a regularisation technique that helps to prevent overfitting by randomly setting a fraction of input units to zero during training \citep{khan2019regularization}. As stated by \cite{khan2019regularization} a dropout rate of 0.5 is a standard dropout rate.
 
 \section{Fully Connected Layer}
 
-The fully connected layer, also known as the densse layer, is located at the end of all the hidden layer, and allowse the model to preform classification. The fully connected layer takes input from the final pooling layer, which is flattened before being passed to it \citep{bhatt2021cnn}. Flattening transforms the 3D output from the previous layer into a single vector \citep{bhatt2021cnn}. The FC layer then learns nonlinear combinations of high-level features from the convolutional layer, allowing it to model complex functions in that space \citep{bhatt2021cnn}.
+The fully connected layer, also known as the dense layer, is located at the end of all the hidden layers, and allows the model to perform classification. The fully connected layer takes input from the final pooling layer, which is flattened before being passed to it \citep{bhatt2021cnn}. Flattening transforms the 3D output from the previous layer into a single vector \citep{bhatt2021cnn}. The FC layer then learns nonlinear combinations of high-level features from the convolutional layer, allowing it to model complex functions in that space \citep{bhatt2021cnn}.
 
 \newpage
 \section{Output Layer}
 
-The output layer is the last layer for a CNN model. The output that the model profides can be between any of the 32 defferent classes that the dataset exist out of. The activation function is also applayed her to determine the probability of the model acuratly predicting the output. Based on this predicting the model does backpropogation and change values to help improve the training process. Since the model is being saved, this make it possible applay transfer learning, by using the saved model to train on a new dataset.
+The output layer is the last layer for a CNN model. The output that the model provides can be between any of the 32 different classes that the dataset exists out of. The activation function is also applied here to determine the probability of the model accurately predicting the output. Based on this predicting the model does backpropagation and changes values to help improve the training process. Since the model is being saved, this makes it possible to apply transfer learning, by using the saved model to train on a new dataset.
 
 \begin{figure}[h]
     \centering
@@ -103,18 +105,64 @@ The output layer is the last layer for a CNN model. The output that the model pr
 
 \chapter[Performance Evaluation]{Performance Evaluation}
 
-The model that was developed could train for a maximum epoch of 150. A pations of 10 epochs was added to prevent overfitting the model, by stopping if no improvements to the model hes been made after 10 epochs. During the training process of the model metrices such as loss per epoch, accuracy per epoch, F1-score per epoch, and the ROC and AUC where collected and saved in their own respective text files. This section will descuse each of these metrices of the model.
+The model that was developed could train for a maximum epoch of 150. A patient of 10 epochs was added to prevent overfitting the model, by stopping if no improvements to the model had been made after 10 epochs. During the training process of the model metrics such as loss per epoch, accuracy per epoch, F1-score per epoch, and the ROC and AUC were collected and saved in their own respective text files. This section will discuss each of these metrics of the model.
 
 \section{Loss}
 
+The loss value helps to improve the model during training, by avoiding overfitting. Since the classes are not the same size this can lead to the model overfitting. But the loss value removes features from classes that have more data than the classes that do not have as much data \citep{pham2021ai}. During the training process the model started with a Loss of 3.8605431059928477 and at the end of the training process the model had a Loss of 0.04921753687264379. The most desirable final loss value is a loss value of 0, but to prevent the model from overfitting if the loss value for a epoch remain close to the same value for 10 epoch the model would then stopped training.The loss was calculated by dividing the running loss of the epoch by the size of the train dataset. The loss per epoch can be seen in Figure \ref{figLoss}.
+
+\begin{figure}[h]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=0.7\textwidth, height=0.7\textheight, keepaspectratio]{img/Loss_per_epoch.png}}
+    \caption{Loss per Epoch}
+    \label{figLoss}
+\end{figure}
+
 \section{Accuracy}
+
+The accuracy is a way to determine how accurate the model is during training. Inorder to calculate the accuracy of the model for each epoch a test dataset is needed, the test dataset for this model consists of 10 images per each class in their respective class. The accuracy that was calculated is the probability that the model correctly classifies the classes for each of the images in the test dataset. The accuracy per epoch can be seen in Figure \ref{figAccuracy}.
+
+\begin{figure}[h]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=0.7\textwidth, height=0.7\textheight, keepaspectratio]{img/Accuracy_per_epoch.png}}
+    \caption{Accuracy per Epoch}
+    \label{figAccuracy}
+\end{figure}
 
 \section{F1-Score}
 
+The F1-score is the harmonic mean of the precision and recall, the value of the F1-score can be any value between 0 and 1 where a F1-score of 1 is seen as being the best score \citep{humphrey2022machine}. Since the classes are not evenly distributed a macro averaged F1-score was calculated. The F1-score of the model is the same as the accuracy of the model, the reason for this is that the classes are not even, and since a macro averaged F1-score was calculated the two values are the same. IF the classes were evenly distributed a micro averaged F1-score could have been calculated and the results would then not be the same \citep{takahashi2022confidence}. The F1-score per epoch can be seen in Figure \ref{figF1-Score}.
+
+\begin{figure}[h]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=0.7\textwidth, height=0.7\textheight, keepaspectratio]{img/F1-Score_per_epoch.png}}
+    \caption{F1-Score per Epoch}
+    \label{figF1-Score}
+\end{figure}
+
+\newpage
 \section{ROC AUC}
 
+To draw a ROC curve the true positive rate and false positive rate for each epoch is needed. The area located under the ROC curve (AUC score) is  the most common statistics used in scientific research to assess binary classifications, and can range from 0 (worst result) to 1 (perfect result) \citep{chicco2023matthews}. The AUC score of this model is 0.8552, this is not a perfect result but it is close to a perfect result. The reason for this result can be related to the prevention of overfitting, if a patient's value was not set in place there could be a possibility that the AUC score would be 1. The ROC curve with AUC score can be seen in Figure \ref{figROC/AUC}
+
+\begin{figure}[h]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=0.7\textwidth, height=0.7\textheight, keepaspectratio]{img/ROC-AUC_Graph.png}}
+    \caption{ROC Curve with AUC Score}
+    \label{figROC/AUC}
+\end{figure}
+
 \chapter[Conclusion]{Conclusion}
+
+In this project, a Convolutional Neural Network (CNN) was successfully developed and trained to classify images of fruits into 32 different classes. The architecture of the model followed a standard design with multiple convolutional, batch normalisation, activation, pooling, dropout, and fully connected layers, ensuring that the model could learn complex patterns while minimising overfitting.
+
+The performance evaluation metrics, including loss, accuracy, F1-score, and ROC-AUC, indicate that the model performed well. The loss decreased significantly throughout the training process, and the accuracy and F1-score demonstrated the model's ability to correctly classify the images. Although the AUC score was not perfect, it remained high, showcasing the model's robustness in handling the classification task.
+
+Despite these promising results, the model's performance could be further improved by fine-tuning the architecture or experimenting with more advanced techniques like data augmentation or transfer learning. Future work could also involve deploying this model in real-world applications or adapting it to other image classification tasks.
+
+In conclusion, this project demonstrated the effectiveness of CNNs in image classification and highlighted areas for further optimisation, making it a valuable contribution to the field of machine learning and artificial intelligence.
 
 \bibliography{MyBib}
 
 \end{document}
+
