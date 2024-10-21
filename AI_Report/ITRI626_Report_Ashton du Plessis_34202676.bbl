@@ -7,12 +7,33 @@ Bhatt, D., Patel, C., Talsania, H., Patel, J., Vaghela, R., Pandya, S., Modi,
   challenges and future scope.
 \newblock {\em Electronics}, 10(20):2470.
 
+\bibitem[Cenggoro et~al., 2018]{cenggoro2018information}
+Cenggoro, T.~W., Budiarto, A., Rahutomo, R., and Pardamean, B. (2018).
+\newblock Information system design for deep learning based plant counting
+  automation.
+\newblock In {\em 2018 Indonesian Association for Pattern Recognition
+  International Conference (INAPR)}, pages 329--332. IEEE.
+
+\bibitem[Chicco and Jurman, 2023]{chicco2023matthews}
+Chicco, D. and Jurman, G. (2023).
+\newblock The matthews correlation coefficient (mcc) should replace the roc auc
+  as the standard metric for assessing binary classification.
+\newblock {\em BioData Mining}, 16(1):4.
+
 \bibitem[Ding et~al., 2022]{ding2022scaling}
 Ding, X., Zhang, X., Han, J., and Ding, G. (2022).
 \newblock Scaling up your kernels to 31x31: Revisiting large kernel design in
   cnns.
 \newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and
   pattern recognition}, pages 11963--11975.
+
+\bibitem[Humphrey et~al., 2022]{humphrey2022machine}
+Humphrey, A., Kuberski, W., Bialek, J., Perrakis, N., Cools, W., Nuyttens, N.,
+  Elakhrass, H., and Cunha, P. (2022).
+\newblock Machine-learning classification of astronomical sources: estimating
+  f1-score in the absence of ground truth.
+\newblock {\em Monthly Notices of the Royal Astronomical Society: Letters},
+  517(1):L116--L120.
 
 \bibitem[Ide and Kurita, 2017]{ide2017improvement}
 Ide, H. and Kurita, T. (2017).
@@ -37,5 +58,50 @@ Kumar, P. and Shankar~Hati, A. (2021).
 \newblock Convolutional neural network with batch normalisation for fault
   detection in squirrel cage induction motor.
 \newblock {\em IET electric power applications}, 15(1):39--50.
+
+\bibitem[Pham et~al., 2021]{pham2021ai}
+Pham, T.-C., Luong, C.-M., Hoang, V.-D., and Doucet, A. (2021).
+\newblock Ai outperformed every dermatologist in dermoscopic melanoma
+  diagnosis, using an optimized deep-cnn architecture with custom mini-batch
+  logic and loss function.
+\newblock {\em Scientific Reports}, 11(1):17485.
+
+\bibitem[Rahutomo et~al., 2019]{rahutomo2019artificial}
+Rahutomo, R., Perbangsa, A.~S., Lie, Y., Cenggoro, T.~W., and Pardamean, B.
+  (2019).
+\newblock Artificial intelligence model implementation in web-based application
+  for pineapple object counting.
+\newblock In {\em 2019 International Conference on Information Management and
+  Technology (ICIMTech)}, volume~1, pages 525--530. IEEE.
+
+\bibitem[Shamsaldin et~al., 2019]{shamsaldin2019study}
+Shamsaldin, A.~S., Fattah, P., Rashid, T.~A., and Al-Salihi, N.~K. (2019).
+\newblock A study of the convolutional neural networks applications.
+\newblock {\em UKH Journal of Science and Engineering}, 3(2):31--40.
+
+\bibitem[Singha et~al., 2021]{singha2021deep}
+Singha, A., Thakur, R.~S., and Patel, T. (2021).
+\newblock Deep learning applications in medical image analysis.
+\newblock {\em Biomedical Data Mining for Information Retrieval: Methodologies,
+  Techniques and Applications}, pages 293--350.
+
+\bibitem[Takahashi et~al., 2022]{takahashi2022confidence}
+Takahashi, K., Yamamoto, K., Kuchiba, A., and Koyama, T. (2022).
+\newblock Confidence interval for micro-averaged f 1 and macro-averaged f 1
+  scores.
+\newblock {\em Applied Intelligence}, 52(5):4961--4972.
+
+\bibitem[Valentino et~al., 2021]{valentino2021design}
+Valentino, F., Cenggoro, T.~W., and Pardamean, B. (2021).
+\newblock A design of deep learning experimentation for fruit freshness
+  detection.
+\newblock In {\em IOP conference series: earth and environmental science},
+  volume 794, page 012110. IOP Publishing.
+
+\bibitem[Wang et~al., 2020]{wang2020recent}
+Wang, X., Zhao, Y., and Pourpanah, F. (2020).
+\newblock Recent advances in deep learning.
+\newblock {\em International Journal of Machine Learning and Cybernetics},
+  11:747--750.
 
 \end{thebibliography}
