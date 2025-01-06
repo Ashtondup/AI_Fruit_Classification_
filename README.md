@@ -1,2 +1,2 @@
 # AI_Fruit_Classification_
-Fruit classification AI
+A CNN model that can determine if a fruit is fresh, mild, or rotten
